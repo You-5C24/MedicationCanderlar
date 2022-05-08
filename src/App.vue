@@ -13,6 +13,7 @@ html,
 body,
 #app {
   height: 100%;
+  font-family: 'Microsoft YaHei', PingFangSC-Regular, 'PingFang SC';
   width: 100%;
   margin: 0;
   > section {
