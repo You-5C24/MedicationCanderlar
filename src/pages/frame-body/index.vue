@@ -3,7 +3,7 @@
     <FrameHeader />
     <div class="flex-1 flex">
       <MainSidebar class="flex-0-220" />
-      <section class="flex-1 p-24 overflow-auto bg-fcfbff">
+      <section class="flex-1 p-24 overflow-auto bg-fcfbff main-section">
         <router-view></router-view>
       </section>
     </div>
@@ -26,4 +26,12 @@ export default {
 
 <script setup lang="ts"></script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.main-section {
+  display: flex;
+  section {
+    flex: 1;
+    overflow: auto;
+  }
+}
+</style>

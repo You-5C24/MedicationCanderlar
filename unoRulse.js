@@ -1,6 +1,17 @@
 export const rules = [
   [/^text-(\d+)$/, ([, d]) => ({ 'font-size': `${d}px` })],
-  [/^m-(\d+)$/, ([, d]) => ({ margin: `${d}px` })],
+  [/^color-(\w+)$/, ([, w]) => ({ color: `#${w}` })],
+  [/^w-(\d+)$/, ([, d]) => ({ width: `${d}px` })],
+  [/^h-(\d+)$/, ([, d]) => ({ height: `${d}px` })],
+  [/^top-(\d+)$/, ([, d]) => ({ top: `${d}px` })],
+  [/^bottom-(\d+)$/, ([, d]) => ({ bottom: `${d}px` })],
+  [/^left-(\d+)$/, ([, d]) => ({ left: `${d}px` })],
+  [/^right-(\d+)$/, ([, d]) => ({ right: `${d}px` })],
+  [/^-top-(\d+)$/, ([, d]) => ({ top: `-${d}px` })],
+  [/^-bottom-(\d+)$/, ([, d]) => ({ bottom: `-${d}px` })],
+  [/^-left-(\d+)$/, ([, d]) => ({ left: `-${d}px` })],
+  [/^-right-(\d+)$/, ([, d]) => ({ right: `-${d}px` })],
+  [/^m-(\d+)$/, ([, d]) => ({ margin: `-${d}px` })],
   [
     /^mx-(\d+)$/,
     ([, d]) => ({ 'margin-left': `${d}px`, 'margin-right': `${d}px` })
@@ -27,6 +38,5 @@ export const rules = [
   [/^pl-(\d+)$/, ([, d]) => ({ 'padding-left': `${d}px` })],
   [/^pr-(\d+)$/, ([, d]) => ({ 'padding-right': `${d}px` })],
   [/^bg-(\w+)$/, ([, w]) => ({ 'background-color': `#${w}` })],
-  [/^color-(\w+)$/, ([, w]) => ({ color: `#${w}` })],
   [/^flex-0-(\d+)$/, ([, d]) => ({ flex: `0 0 ${d}px` })]
 ];

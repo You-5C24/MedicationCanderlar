@@ -28,6 +28,25 @@ module.exports = {
     // 3. 注意要加上这一句，开启 prettier 自动修复的功能
     'prettier/prettier': 'error',
     quotes: ['error', 'single'],
-    semi: ['error', 'always']
+    semi: ['error', 'always'],
+    'vue/attributes-order': [
+      'warn',
+      {
+        order: [
+          'DEFINITION',
+          'LIST_RENDERING',
+          'CONDITIONALS',
+          'RENDER_MODIFIERS',
+          'GLOBAL',
+          'UNIQUE',
+          'TWO_WAY_BINDING',
+          'OTHER_DIRECTIVES',
+          'OTHER_ATTR',
+          'EVENTS',
+          'CONTENT'
+        ],
+        alphabetical: true //字母排序
+      }
+    ]
   }
 };

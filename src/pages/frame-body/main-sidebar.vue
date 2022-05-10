@@ -1,10 +1,10 @@
 <template>
-  <div class="py-16">
+  <div class="py-26">
     <div
-      class="px-24 py-8 mb-16 cursor-pointer color-708ED7 flex items-center"
-      :class="{ 'active-bar': menu.enName === sidebarStore.activeMenu }"
       v-for="menu in menus"
       :key="menu.name"
+      class="px-24 py-8 mb-16 cursor-pointer color-708ED7 flex items-center"
+      :class="{ 'active-bar': menu.enName === sidebarStore.activeMenu }"
       @click="changeMenu(menu)"
     >
       <ISymbol :iconClass="menu.icon" />
@@ -60,7 +60,6 @@ const menus: IMenus[] = [
 const sidebarStore = useSidebarStore();
 
 const isCollapse = ref<boolean>(false);
-
 const router = useRouter();
 const changeMenu = (menu: IMenus) => {
   sidebarStore.changeActiveMenu(menu.enName);

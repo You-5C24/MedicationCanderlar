@@ -7,6 +7,7 @@ declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     ElButton: typeof import('element-plus/es')['ElButton'];
     ElConfigProvider: typeof import('element-plus/es')['ElConfigProvider'];
+    ElInput: typeof import('element-plus/es')['ElInput'];
     ElMenu: typeof import('element-plus/es')['ElMenu'];
     ElMenuItem: typeof import('element-plus/es')['ElMenuItem'];
     ElPagination: typeof import('element-plus/es')['ElPagination'];
@@ -15,6 +16,7 @@ declare module '@vue/runtime-core' {
     ISymbol: typeof import('./src/components/ISymbol.vue')['default'];
     RouterLink: typeof import('vue-router')['RouterLink'];
     RouterView: typeof import('vue-router')['RouterView'];
+    UseModule: typeof import('./src/components/use-module.vue')['default'];
   }
 }
 
