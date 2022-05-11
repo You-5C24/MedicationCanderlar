@@ -12,6 +12,8 @@ declare module '@vue/runtime-core' {
     ElMenuItem: typeof import('element-plus/es')['ElMenuItem'];
     ElPagination: typeof import('element-plus/es')['ElPagination'];
     ElSubMenu: typeof import('element-plus/es')['ElSubMenu'];
+    ElTable: typeof import('element-plus/es')['ElTable'];
+    ElTableColumn: typeof import('element-plus/es')['ElTableColumn'];
     HelloWorld: typeof import('./src/components/HelloWorld.vue')['default'];
     ISymbol: typeof import('./src/components/ISymbol.vue')['default'];
     RouterLink: typeof import('vue-router')['RouterLink'];

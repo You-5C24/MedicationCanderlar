@@ -7,7 +7,7 @@
       </div>
     </div>
     <!-- Patient Title -->
-    <div class="mt-24 flex items-center">
+    <div class="flex items-center my-24">
       <span class="text-18 font-semibold color-35405a">患者列表</span>
       <el-input
         v-model="patient"
@@ -31,9 +31,11 @@
       </div>
     </div>
     <!-- Patient Card -->
-    <div class="flex flex-wrap mt-24">
+    <div v-if="activeTag === 'card'" class="flex flex-wrap">
       <PatientCard />
     </div>
+    <!-- Patient List -->
+    <PatientList v-if="activeTag === 'list'" />
   </section>
 </template>
 
@@ -41,12 +43,14 @@
 import UseModule from '@/components/use-module.vue';
 import ISymbol from '@/components/ISymbol.vue';
 import PatientCard from './patient-card.vue';
+import PatientList from './patient-list.vue';
 export default {
   name: 'PageWorkbench',
   components: {
     UseModule,
     ISymbol,
-    PatientCard
+    PatientCard,
+    PatientList
   }
 };
 </script>

@@ -1,6 +1,7 @@
 export const rules = [
   [/^text-(\d+)$/, ([, d]) => ({ 'font-size': `${d}px` })],
   [/^color-(\w+)$/, ([, w]) => ({ color: `#${w}` })],
+  [/^border-color-(\w+)$/, ([, w]) => ({ 'border-color': `#${w}` })],
   [/^w-(\d+)$/, ([, d]) => ({ width: `${d}px` })],
   [/^h-(\d+)$/, ([, d]) => ({ height: `${d}px` })],
   [/^top-(\d+)$/, ([, d]) => ({ top: `${d}px` })],
