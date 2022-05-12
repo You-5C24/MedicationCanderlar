@@ -33,25 +33,25 @@ import { useSidebarStore } from '@/store/sidebar';
 const menus: IMenus[] = [
   {
     name: '首页',
-    enName: 'homePage',
+    enName: 'HomePage',
     router: '/',
     icon: 'icon-shouye'
   },
   {
     name: '工作台',
-    enName: 'workbench',
+    enName: 'Workbench',
     router: '/workbench',
     icon: 'icon-shezhi'
   },
   {
     name: '统计报表',
-    enName: 'statisticalForm',
+    enName: 'StatisticalForm',
     router: '/statisticalForm',
     icon: 'icon-tongjifenxi-xiangmubiaogetongji'
   },
   {
     name: '系统管理',
-    enName: 'systemManagement',
+    enName: 'SystemManagement',
     router: '/systemManagement',
     icon: 'icon-medicinebox'
   }

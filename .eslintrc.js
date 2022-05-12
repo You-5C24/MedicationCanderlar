@@ -47,6 +47,7 @@ module.exports = {
         ],
         alphabetical: true //字母排序
       }
-    ]
+    ],
+    '@typescript-eslint/no-explicit-any': ['off']
   }
 };

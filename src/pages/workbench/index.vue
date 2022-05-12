@@ -31,11 +31,16 @@
       </div>
     </div>
     <!-- Patient Card -->
-    <div v-if="activeTag === 'card'" class="flex flex-wrap">
-      <PatientCard />
+    <div v-show="activeTag === 'card' && patientList" class="flex flex-wrap">
+      <PatientCard
+        v-for="patient in patientList"
+        :key="patient.id"
+        class="mr-24"
+        :info="patient"
+      />
     </div>
     <!-- Patient List -->
-    <PatientList v-if="activeTag === 'list'" />
+    <PatientList v-show="activeTag === 'list'" :patientList="patientList" />
   </section>
 </template>
 
@@ -59,8 +64,13 @@ export default {
 import Medicate from '@/assets/images/medicate.png';
 import Doctor from '@/assets/images/doctor.png';
 import Office from '@/assets/images/office.png';
-import { ref } from 'vue';
+import { onMounted, ref } from 'vue';
 import { Search } from '@element-plus/icons-vue';
+import wokbenchApi from '@/service/api/workbench';
+import { IPatientInfo } from './types/workbench';
+import { randomNum } from '@/util';
+
+const patientColors = ['acddee', '708ed7', 'ef5d84'];
 
 const useItems = [
   {
@@ -98,8 +108,22 @@ let activeTag = ref<string>('card');
 const changeTag = (val: string) => {
   activeTag.value = val;
 };
-
+// 患者姓名查询
 let patient = ref<string>('');
+
+let patientList = ref<IPatientInfo[]>([]);
+const getPatientList = async () => {
+  wokbenchApi.getPatientList().then((res) => {
+    res.data.forEach((item: IPatientInfo) => {
+      item.randomColor = patientColors[randomNum(0, 2)];
+    });
+    patientList.value = res.data;
+  });
+};
+
+onMounted(() => {
+  getPatientList();
+});
 </script>
 
 <style lang="scss" scoped>
