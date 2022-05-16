@@ -39,5 +39,6 @@ export const rules = [
   [/^pl-(\d+)$/, ([, d]) => ({ 'padding-left': `${d}px` })],
   [/^pr-(\d+)$/, ([, d]) => ({ 'padding-right': `${d}px` })],
   [/^bg-(\w+)$/, ([, w]) => ({ 'background-color': `#${w}` })],
-  [/^flex-0-(\d+)$/, ([, d]) => ({ flex: `0 0 ${d}px` })]
+  [/^flex-0-(\d+)$/, ([, d]) => ({ flex: `0 0 ${d}px` })],
+  [/^leading-(\d+)$/, ([, d]) => ({ 'line-height': `${d}px` })]
 ];

@@ -76,8 +76,8 @@ const useItems = [
   {
     label: '用药诊疗',
     icon: Medicate,
-    router: '',
-    sideBarKey: ''
+    router: '/medicalDiagnosis',
+    sideBarKey: 'Workbench'
   },
   {
     label: '会诊室',

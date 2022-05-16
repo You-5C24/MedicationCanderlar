@@ -41,7 +41,7 @@ const menus: IMenus[] = [
     name: '工作台',
     enName: 'Workbench',
     router: '/workbench',
-    icon: 'icon-shezhi'
+    icon: 'icon-medicinebox'
   },
   {
     name: '统计报表',
@@ -53,7 +53,7 @@ const menus: IMenus[] = [
     name: '系统管理',
     enName: 'SystemManagement',
     router: '/systemManagement',
-    icon: 'icon-medicinebox'
+    icon: 'icon-shezhi'
   }
 ];
 
