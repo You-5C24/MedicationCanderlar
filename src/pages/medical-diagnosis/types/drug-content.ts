@@ -1,4 +1,4 @@
-interface IDug {
+interface IDrug {
   name: string;
   dosage: string;
   use: string;
@@ -7,4 +7,4 @@ interface IDug {
   remark: string;
 }
 
-export type { IDug };
+export type { IDrug };

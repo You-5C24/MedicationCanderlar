@@ -33,6 +33,7 @@
         <!-- Main Right Info -->
         <div class="w-400 ml-24">
           <PastHistory />
+          <MedicationProblems class="mt-24" />
         </div>
       </div>
     </div>
@@ -45,12 +46,14 @@
 import BaseInfo from './base-info.vue';
 import PastHistory from './past-history.vue';
 import DrugContent from './drug-content.vue';
+import MedicationProblems from './medication-problems.vue';
 export default {
   name: 'MedicalDiagnosis',
   components: {
     BaseInfo,
     PastHistory,
-    DrugContent
+    DrugContent,
+    MedicationProblems
   }
 };
 </script>

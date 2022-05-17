@@ -1,12 +1,12 @@
 <template>
   <button
-    p="y-2 x-4"
-    font="semibold"
-    shadow="lg"
-    text="white"
     bg="green-500 hover:green-700"
     border="rounded-lg none "
     cursor="pointer"
+    font="semibold"
+    p="y-2 x-4"
+    shadow="lg"
+    text="white"
   >
     Click me
   </button>
@@ -16,14 +16,14 @@
   <el-pagination
     v-model:currentPage="currentPage4"
     v-model:page-size="pageSize4"
+    :background="background"
+    :disabled="disabled"
+    layout="total, sizes, prev, pager, next, jumper"
     :page-sizes="[100, 200, 300, 400]"
     :small="small"
-    :disabled="disabled"
-    :background="background"
-    layout="total, sizes, prev, pager, next, jumper"
     :total="400"
-    @size-change="handleSizeChange"
     @current-change="handleCurrentChange"
+    @size-change="handleSizeChange"
   />
 </template>
 

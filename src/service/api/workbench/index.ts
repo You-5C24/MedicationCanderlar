@@ -8,6 +8,9 @@ const base =
 const wokbenchApi: IWokbenchApi = {
   getPatientList() {
     return http.get(`${base}/getPatientList`);
+  },
+  getConferenceCardList() {
+    return http.get(`${base}/getConferenceCardList`);
   }
 };
 

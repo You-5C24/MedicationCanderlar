@@ -91,9 +91,9 @@ export default {
 
 <script setup lang="ts">
 import { ref } from 'vue';
-import { IDug } from './types/drug-content';
+import { IDrug } from './types/drug-content';
 
-const drugs = ref<IDug[]>([
+const drugs = ref<IDrug[]>([
   {
     name: '',
     dosage: '',

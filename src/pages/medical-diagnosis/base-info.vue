@@ -22,12 +22,24 @@
         <div class="text-12 color-afbdf4">性别</div>
         <div class="flex">
           <div
-            class="w-30 h-30 border-1 mt-4 rounded-1 text-center leading-30 text-12 border-color-dddbdb bg-f2f5ff color-afbdf4 cursor-pointer"
+            class="w-30 h-30 border-1 mt-4 rounded-1 text-center leading-30 text-12 border-color-dddbdb cursor-pointer"
+            :class="
+              baseInfo.gender === 'male'
+                ? 'bg-728cd7 color-ffffff'
+                : ' bg-f2f5ff  color-afbdf4'
+            "
+            @click="baseInfo.gender = 'male'"
           >
             男
           </div>
           <div
-            class="w-30 h-30 border-1 mt-4 rounded-1 text-center leading-30 text-12 border-color-dddbdb bg-f2f5ff color-afbdf4 ml-8 cursor-pointer"
+            class="w-30 h-30 border-1 mt-4 rounded-1 text-center leading-30 text-12 border-color-dddbdb ml-8 cursor-pointer"
+            :class="
+              baseInfo.gender === 'female'
+                ? 'bg-728cd7 color-ffffff'
+                : ' bg-f2f5ff  color-afbdf4'
+            "
+            @click="baseInfo.gender = 'female'"
           >
             女
           </div>

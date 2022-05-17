@@ -5,6 +5,7 @@ import Workbench from '@/pages/workbench/index.vue';
 import StatisticalForm from '@/pages/statistical-form/index.vue';
 import SystemManagement from '@/pages/system-management/index.vue';
 import MedicalDiagnosis from '@/pages/medical-diagnosis/index.vue';
+import ConferenceRoom from '@/pages/conference-room/index.vue';
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -35,6 +36,11 @@ const routes: Array<RouteRecordRaw> = [
         path: '/medicalDiagnosis',
         name: 'MedicalDiagnosis',
         component: MedicalDiagnosis
+      },
+      {
+        path: '/conferenceRoom',
+        name: 'ConferenceRoom',
+        component: ConferenceRoom
       }
     ]
   }

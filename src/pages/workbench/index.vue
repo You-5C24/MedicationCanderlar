@@ -82,8 +82,8 @@ const useItems = [
   {
     label: '会诊室',
     icon: Office,
-    router: '',
-    sideBarKey: ''
+    router: '/conferenceRoom',
+    sideBarKey: 'Workbench'
   },
   {
     label: '今日出诊',
