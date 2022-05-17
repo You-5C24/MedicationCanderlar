@@ -1,0 +1,30 @@
+::-webkit-scrollbar-track-piece {
+  //滚动条凹槽的颜色，还可以设置边框属性
+  background-color: transparent;
+}
+
+::-webkit-scrollbar {
+  //滚动条的宽度
+  width: 15px;
+  height: 15px;
+}
+
+::-webkit-scrollbar-thumb {
+  //滚动条的设置
+  background-color: #aaa;
+  background-clip: padding-box;
+  min-height: 28px;
+  -webkit-border-radius: 3em;
+  -moz-border-radius: 3em;
+  border-radius: 3em;
+  border: 4px solid transparent;
+  background-color: #aaaaaa50;
+  &:hover {
+    background-color: #aaaaaa;
+  }
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}

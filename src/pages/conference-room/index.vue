@@ -1,5 +1,5 @@
 <template>
-  <section class="flex">
+  <section class="flex overflow-auto">
     <!-- Left Card -->
     <div class="flex-0-340">
       <!-- Header -->

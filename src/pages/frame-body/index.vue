@@ -1,7 +1,7 @@
 <template>
   <section class="flex flex-col">
     <FrameHeader />
-    <div class="flex-1 flex">
+    <div class="flex-1 flex overflow-auto">
       <MainSidebar class="flex-0-220" />
       <section class="flex-1 p-24 overflow-auto bg-fcfbff main-section">
         <router-view></router-view>
@@ -31,7 +31,6 @@ export default {
   display: flex;
   section {
     flex: 1;
-    overflow: auto;
   }
 }
 </style>
