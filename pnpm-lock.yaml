@@ -14,6 +14,7 @@ specifiers:
   '@unocss/preset-icons': ^0.33.0
   '@unocss/preset-uno': ^0.33.0
   '@vitejs/plugin-vue': ^2.3.1
+  animate.css: ^4.1.1
   axios: ^0.27.2
   commitlint: ^16.2.4
   element-plus: ^2.1.11
@@ -60,6 +61,7 @@ devDependencies:
   '@unocss/preset-icons': 0.33.0
   '@unocss/preset-uno': 0.33.0
   '@vitejs/plugin-vue': 2.3.2_vite@2.9.8+vue@3.2.33
+  animate.css: 4.1.1
   commitlint: 16.2.4
   element-plus: 2.1.11_vue@3.2.33
   eslint: 8.15.0
@@ -925,6 +927,10 @@ packages:
       json-schema-traverse: 1.0.0
       require-from-string: 2.0.2
       uri-js: 4.4.1
+    dev: true
+
+  /animate.css/4.1.1:
+    resolution: {integrity: sha512-+mRmCTv6SbCmtYJCN4faJMNFVNN5EuCTTprDTAo7YzIGji2KADmakjVA3+8mVDkZ2Bf09vayB35lSQIex2+QaQ==}
     dev: true
 
   /ansi-escapes/4.3.2:

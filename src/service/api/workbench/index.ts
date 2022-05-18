@@ -5,13 +5,16 @@ import { IWokbenchApi } from './types';
 const base =
   'https://www.fastmock.site/mock/a24ff42960d950df4856834e9a3d499f/api/workbench';
 
-const wokbenchApi: IWokbenchApi = {
+const workbenchApi: IWokbenchApi = {
   getPatientList() {
     return http.get(`${base}/getPatientList`);
   },
   getConferenceCardList() {
     return http.get(`${base}/getConferenceCardList`);
+  },
+  getChat(params: { id: number }) {
+    return http.get(`${base}/getChat`, params);
   }
 };
 
-export default wokbenchApi;
+export default workbenchApi;

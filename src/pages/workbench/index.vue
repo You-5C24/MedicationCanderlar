@@ -66,7 +66,7 @@ import Doctor from '@/assets/images/doctor.png';
 import Office from '@/assets/images/office.png';
 import { onMounted, ref } from 'vue';
 import { Search } from '@element-plus/icons-vue';
-import wokbenchApi from '@/service/api/workbench';
+import workbenchApi from '@/service/api/workbench';
 import { IPatientInfo } from './types/workbench';
 import { randomNum } from '@/util';
 
@@ -88,8 +88,8 @@ const useItems = [
   {
     label: '今日出诊',
     icon: Doctor,
-    router: '',
-    sideBarKey: ''
+    router: '/TodayVisit',
+    sideBarKey: 'Workbench'
   }
 ];
 
@@ -113,7 +113,7 @@ let patient = ref<string>('');
 
 let patientList = ref<IPatientInfo[]>([]);
 const getPatientList = async () => {
-  wokbenchApi.getPatientList().then((res) => {
+  workbenchApi.getPatientList().then((res) => {
     res.data.forEach((item: IPatientInfo) => {
       item.randomColor = patientColors[randomNum(0, 2)];
     });

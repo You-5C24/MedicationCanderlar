@@ -6,6 +6,7 @@ import StatisticalForm from '@/pages/statistical-form/index.vue';
 import SystemManagement from '@/pages/system-management/index.vue';
 import MedicalDiagnosis from '@/pages/medical-diagnosis/index.vue';
 import ConferenceRoom from '@/pages/conference-room/index.vue';
+import TodayVisit from '@/pages/today-visit/index.vue';
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -41,6 +42,11 @@ const routes: Array<RouteRecordRaw> = [
         path: '/conferenceRoom',
         name: 'ConferenceRoom',
         component: ConferenceRoom
+      },
+      {
+        path: '/todayVisit',
+        name: 'TodayVisit',
+        component: TodayVisit
       }
     ]
   }

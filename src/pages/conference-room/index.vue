@@ -1,5 +1,8 @@
 <template>
-  <section class="flex overflow-auto">
+  <section
+    class="flex"
+    :class="controlOverflow ? 'overflow-hidden' : 'overflow-auto'"
+  >
     <!-- Left Card -->
     <div class="flex-0-340">
       <!-- Header -->
@@ -33,7 +36,17 @@
       </div>
     </div>
     <!-- Right Chat -->
-    <Chat />
+    <transition
+      enter-active-class="animate__animated animate__fadeInRightBig"
+      leave-active-class="animate__animated animate__fadeOutRightBig"
+    >
+      <Chat
+        v-if="activeCardId > -1 && chatsData"
+        id="chat"
+        :chatsData="chatsData"
+        @exitChat="exitChat"
+      />
+    </transition>
   </section>
 </template>
 
@@ -52,28 +65,60 @@ export default {
 <script setup lang="ts">
 import ISymbol from '@/components/ISymbol.vue';
 import { useRouter } from 'vue-router';
-import wokbenchApi from '@/service/api/workbench';
+import workbenchApi from '@/service/api/workbench';
 import { ICard } from './types/single-card';
 import { onMounted, ref } from 'vue';
+import { IChatsData } from './types/chat';
 
 const router = useRouter();
 
 let cards = ref<ICard[]>([]);
 let activeCardId = ref<number>(-1);
+let chatsData = ref<IChatsData | null>(null);
 
 const getCards = () => {
-  wokbenchApi.getConferenceCardList().then((res) => {
+  workbenchApi.getConferenceCardList().then((res) => {
     cards.value = res.data;
   });
 };
 
 const changeActiveId = (id: number) => {
-  activeCardId.value = id;
+  if (activeCardId.value !== id) {
+    activeCardId.value = id;
+    getChat(id);
+  }
+};
+
+const getChat = (id: number) => {
+  workbenchApi.getChat({ id }).then((res) => {
+    chatsData.value = res.data;
+    setOverflow();
+  });
+};
+
+const exitChat = () => {
+  activeCardId.value = -1;
+  chatsData.value = null;
+  setOverflow();
+};
+
+let controlOverflow = ref<boolean>(false);
+const setOverflow = () => {
+  controlOverflow.value = true;
+  setTimeout(() => {
+    controlOverflow.value = false;
+  }, 1000);
 };
 
 onMounted(() => {
   getCards();
 });
 </script>
+
+<style lang="scss">
+#chat {
+  animation-duration: 0.5s;
+}
+</style>
 
 <style lang="scss" scoped></style>
