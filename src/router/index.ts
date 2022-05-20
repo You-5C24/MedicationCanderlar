@@ -9,6 +9,7 @@ import ConferenceRoom from '@/pages/conference-room/index.vue';
 import TodayVisit from '@/pages/today-visit/index.vue';
 import PatientRecords from '@/pages/patient-records/index.vue';
 import HistoryRecords from '@/pages/patient-records/history-record.vue';
+import Details from '@/pages/patient-records/details.vue';
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -59,6 +60,11 @@ const routes: Array<RouteRecordRaw> = [
             path: '',
             name: 'HistoryRecords',
             component: HistoryRecords
+          },
+          {
+            path: '/patientRecords/details',
+            name: 'Details',
+            component: Details
           }
         ]
       }

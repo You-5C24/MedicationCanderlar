@@ -16,6 +16,7 @@
           v-for="item in records.medicalRecord"
           :key="item.id"
           class="mt-16 p-12 bg-ffffff cursor-pointer rounded-2"
+          @click="getDetails(item.id)"
         >
           <div class="flex items-center">
             <span class="text-14 color-708ed7">{{ item.type }}</span>
@@ -25,6 +26,7 @@
               iconClass="icon-wenjian"
               iconHeight="24"
               iconWidth="24"
+              @handleClick="getDetails(item.id)"
             />
           </div>
           <div class="text-14 mt-16">{{ item.info }}</div>
@@ -131,11 +133,12 @@ export default {
 </script>
 
 <script setup lang="ts">
-import { useRoute } from 'vue-router';
+import { useRoute, useRouter } from 'vue-router';
 import workbenchApi from '@/service/api/workbench';
 import { onMounted, ref } from 'vue';
 import { IPatientRecords } from './types/patient-records';
 
+const router = useRouter();
 const route = useRoute();
 
 const records = ref<IPatientRecords | null>(null);
@@ -143,6 +146,10 @@ const getPatientRecords = (id: number) => {
   workbenchApi.getPatientRecords({ id }).then((res) => {
     records.value = res.data;
   });
+};
+
+const getDetails = (id: number) => {
+  router.push(`/patientRecords/details?id=${id}`);
 };
 
 onMounted(() => {
