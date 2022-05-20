@@ -59,7 +59,6 @@ export default {
 </script>
 
 <script setup lang="ts">
-import ISymbol from '@/components/ISymbol.vue';
 import { useRouter } from 'vue-router';
 
 const router = useRouter();

@@ -51,19 +51,18 @@
 </template>
 
 <script lang="ts">
-import SingleCard from './single-card.vue';
 import Chat from './chat.vue';
+import SingleCard from './single-card.vue';
 export default {
   name: 'ConferenceRoom',
   components: {
-    SingleCard,
-    Chat
+    Chat,
+    SingleCard
   }
 };
 </script>
 
 <script setup lang="ts">
-import ISymbol from '@/components/ISymbol.vue';
 import { useRouter } from 'vue-router';
 import workbenchApi from '@/service/api/workbench';
 import { ICard } from './types/single-card';

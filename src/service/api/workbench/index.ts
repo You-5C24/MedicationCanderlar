@@ -20,6 +20,12 @@ const workbenchApi: IWokbenchApi = {
   },
   getHaveVisitList() {
     return http.get(`${base}/getHaveVisitList`);
+  },
+  getPatientBaseInfo(params: { id: number }) {
+    return http.get(`${base}/getPatientBaseInfo`, params);
+  },
+  getPatientRecords(params: { id: number }) {
+    return http.get(`${base}/getPatientRecords`, params);
   }
 };
 

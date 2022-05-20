@@ -60,14 +60,12 @@
 </template>
 
 <script lang="ts">
-import ISymbol from '@/components/ISymbol.vue';
 import DoctorCard from './doctor-card.vue';
 import VisitedCard from './visited-card.vue';
 import DoctortList from './doctor-list.vue';
 export default {
   name: 'TodayVisit',
   components: {
-    ISymbol,
     DoctorCard,
     VisitedCard,
     DoctortList

@@ -27,12 +27,8 @@
 </template>
 
 <script lang="ts">
-import ISymbol from '@/components/ISymbol.vue';
 export default {
-  name: 'VisitedCard',
-  components: {
-    ISymbol
-  }
+  name: 'VisitedCard'
 };
 </script>
 

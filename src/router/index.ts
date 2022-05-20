@@ -8,6 +8,7 @@ import MedicalDiagnosis from '@/pages/medical-diagnosis/index.vue';
 import ConferenceRoom from '@/pages/conference-room/index.vue';
 import TodayVisit from '@/pages/today-visit/index.vue';
 import PatientRecords from '@/pages/patient-records/index.vue';
+import HistoryRecords from '@/pages/patient-records/history-record.vue';
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -52,7 +53,14 @@ const routes: Array<RouteRecordRaw> = [
       {
         path: '/patientRecords',
         name: 'PatientRecords',
-        component: PatientRecords
+        component: PatientRecords,
+        children: [
+          {
+            path: '',
+            name: 'HistoryRecords',
+            component: HistoryRecords
+          }
+        ]
       }
     ]
   }

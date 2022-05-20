@@ -47,16 +47,12 @@
 </template>
 
 <script lang="ts">
-import ISymbol from '@/components/ISymbol.vue';
 import { PropType } from 'vue';
 import { useRouter } from 'vue-router';
 import { IPatientInfo } from './types/workbench';
 
 export default {
-  name: 'PatientCard',
-  components: {
-    ISymbol
-  }
+  name: 'PatientCard'
 };
 </script>
 
@@ -71,7 +67,7 @@ const props = defineProps({
 const router = useRouter();
 
 const getPatientDetail = () => {
-  router.push('/patientRecords');
+  router.push(`/patientRecords?id=${props.info.id}`);
 };
 </script>
 

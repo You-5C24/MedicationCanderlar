@@ -46,14 +46,12 @@
 
 <script lang="ts">
 import UseModule from '@/components/use-module.vue';
-import ISymbol from '@/components/ISymbol.vue';
 import PatientCard from './patient-card.vue';
 import PatientList from './patient-list.vue';
 export default {
   name: 'PageWorkbench',
   components: {
     UseModule,
-    ISymbol,
     PatientCard,
     PatientList
   }

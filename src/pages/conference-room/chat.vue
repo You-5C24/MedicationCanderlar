@@ -70,12 +70,8 @@
 </template>
 
 <script lang="ts">
-import ISymbol from '@/components/ISymbol.vue';
 export default {
-  name: 'PageChat',
-  components: {
-    ISymbol
-  }
+  name: 'PageChat'
 };
 </script>
 

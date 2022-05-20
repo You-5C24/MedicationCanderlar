@@ -30,12 +30,8 @@
 </template>
 
 <script lang="ts">
-import ISymbol from '@/components/ISymbol.vue';
 export default {
-  name: 'SingleCard',
-  components: {
-    ISymbol
-  }
+  name: 'SingleCard'
 };
 </script>
 

@@ -80,12 +80,8 @@
 </template>
 
 <script lang="ts">
-import ISymbol from '@/components/ISymbol.vue';
 export default {
-  name: 'DrugContent',
-  components: {
-    ISymbol
-  }
+  name: 'DrugContent'
 };
 </script>
 

@@ -38,12 +38,8 @@
 </template>
 
 <script lang="ts">
-import ISymbol from '@/components/ISymbol.vue';
 export default {
-  name: 'DoctorCard',
-  componets: {
-    ISymbol
-  }
+  name: 'DoctorCard'
 };
 </script>
 

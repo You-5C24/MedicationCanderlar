@@ -14,13 +14,8 @@
 </template>
 
 <script lang="ts">
-import ISymbol from '@/components/ISymbol.vue';
-
 export default {
-  name: 'MainSidebar',
-  components: {
-    ISymbol
-  }
+  name: 'MainSidebar'
 };
 </script>
 

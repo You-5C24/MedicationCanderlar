@@ -1,32 +1,32 @@
 <template>
-  <section>
+  <section class="flex flex-col">
     <!-- Top Title -->
     <div class="flex items-center mb-24">
       <div
         class="flex items-center justify-content mr-8 p-4 border-1 rounded-1 border-color-dddbdb bg-f2f5ff cursor-pointer"
-        @click="router.push('/workbench')"
+        @click="router.go(-1)"
       >
         <ISymbol
           iconClass="icon-xiangzuojiantou"
-          @handleClick="router.push('/workbench')"
+          @handleClick="router.go(-1)"
         />
       </div>
       <span class="text-18 font-semibold color-35405a">患者档案</span>
     </div>
     <!-- Personal Information -->
-    <div class="mt-24 flex">
+    <div class="my-24 flex">
       <div
         class="border-3 border-color-afbdf4 w-48 h-48 rounded-3 text-28 text-center leading-48 font-semibold"
       >
-        Z
+        {{ baseInfo.firstName }}
       </div>
       <div class="ml-16">
-        <div class="text-24 font-semibold">张治中</div>
+        <div class="text-24 font-semibold">{{ baseInfo.name }}</div>
         <div class="flex items-center mt-6">
           <ISymbol iconClass="icon-tianmaociribida" />
-          <span class="text-14 ml-4">19238293</span>
+          <span class="text-14 ml-4">{{ baseInfo.id }}</span>
           <ISymbol class="ml-16" iconClass="icon-dianhua2" />
-          <span class="text-14 ml-4">13928383828</span>
+          <span class="text-14 ml-4">{{ baseInfo.tel }}</span>
         </div>
       </div>
       <el-button class="self-end ml-24 h-28 bg-e4eafc color-919fc8 text-12"
@@ -37,30 +37,45 @@
       >
       <div class="ml-auto flex">
         <div class="mr-16">
-          <div class="text-16 font-semibold">赵亚麟</div>
-          <div class="text-12 color-666666 mt-4">主治医师</div>
+          <div class="text-16 font-semibold">{{ baseInfo.doctor }}</div>
+          <div class="text-12 color-666666 mt-4">{{ baseInfo.doctorDept }}</div>
         </div>
         <img class="w-48 h-48" :src="Default" />
       </div>
+    </div>
+    <div class="flex-1 flex">
+      <router-view></router-view>
     </div>
   </section>
 </template>
 
 <script lang="ts">
-import ISymbol from '@/components/ISymbol.vue';
 export default {
-  name: 'PatientRecords',
-  components: {
-    ISymbol
-  }
+  name: 'PatientRecords'
 };
 </script>
 
 <script setup lang="ts">
 import Default from '@/assets/images/default.png';
-import { useRouter } from 'vue-router';
+import { useRoute, useRouter } from 'vue-router';
+import workbenchApi from '@/service/api/workbench';
+import { onMounted, ref } from 'vue';
+import { IBaseInfo } from './types/patient-records';
 
 const router = useRouter();
+const route = useRoute();
+
+let baseInfo = ref<IBaseInfo>({});
+const getPatientBaseInfo = (id: number) => {
+  workbenchApi.getPatientBaseInfo({ id }).then((res) => {
+    baseInfo.value = res.data;
+  });
+};
+
+onMounted(() => {
+  const id = route.query.id as unknown as number;
+  getPatientBaseInfo(id);
+});
 </script>
 
 <style lang="scss" scoped></style>
