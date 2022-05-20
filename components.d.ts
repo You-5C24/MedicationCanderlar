@@ -9,15 +9,10 @@ declare module '@vue/runtime-core' {
     ElConfigProvider: typeof import('element-plus/es')['ElConfigProvider'];
     ElDatePicker: typeof import('element-plus/es')['ElDatePicker'];
     ElInput: typeof import('element-plus/es')['ElInput'];
-    ElMenu: typeof import('element-plus/es')['ElMenu'];
-    ElMenuItem: typeof import('element-plus/es')['ElMenuItem'];
     ElOption: typeof import('element-plus/es')['ElOption'];
-    ElPagination: typeof import('element-plus/es')['ElPagination'];
     ElSelect: typeof import('element-plus/es')['ElSelect'];
-    ElSubMenu: typeof import('element-plus/es')['ElSubMenu'];
     ElTable: typeof import('element-plus/es')['ElTable'];
     ElTableColumn: typeof import('element-plus/es')['ElTableColumn'];
-    HelloWorld: typeof import('./src/components/HelloWorld.vue')['default'];
     ISymbol: typeof import('./src/components/ISymbol.vue')['default'];
     RouterLink: typeof import('vue-router')['RouterLink'];
     RouterView: typeof import('vue-router')['RouterView'];

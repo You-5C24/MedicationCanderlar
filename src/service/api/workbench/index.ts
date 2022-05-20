@@ -14,6 +14,12 @@ const workbenchApi: IWokbenchApi = {
   },
   getChat(params: { id: number }) {
     return http.get(`${base}/getChat`, params);
+  },
+  getVisitList() {
+    return http.get(`${base}/getVisitList`);
+  },
+  getHaveVisitList() {
+    return http.get(`${base}/getHaveVisitList`);
   }
 };
 

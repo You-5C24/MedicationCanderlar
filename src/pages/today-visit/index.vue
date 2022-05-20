@@ -36,13 +36,25 @@
         </div>
       </div>
       <!-- Left Main -->
-      <div class="flex flex-wrap">
-        <DoctorCard />
+      <div v-show="activeTag === 'card'" class="flex flex-wrap">
+        <DoctorCard
+          v-for="(visit, i) in visitList"
+          :key="i"
+          class="mr-24 mb-24"
+          :visit="visit"
+        />
       </div>
+      <DoctortList v-show="activeTag === 'list'" :visitList="visitList" />
     </div>
     <!-- Right Vist -->
-    <div class="flex-0-260 bg-ffffff ml-24 rounded-1 px-8 pt-24 pb-16">
-      right
+    <div class="flex-0-300 bg-ffffff ml-24 rounded-1 px-12 pt-24 pb-16">
+      <div class="text-18 font-semibold color-35405a mb-24">今日已经出诊</div>
+      <VisitedCard
+        v-for="(visited, i) in haveVisitList"
+        :key="i"
+        class="mb-16"
+        :visited="visited"
+      />
     </div>
   </section>
 </template>
@@ -50,19 +62,25 @@
 <script lang="ts">
 import ISymbol from '@/components/ISymbol.vue';
 import DoctorCard from './doctor-card.vue';
+import VisitedCard from './visited-card.vue';
+import DoctortList from './doctor-list.vue';
 export default {
   name: 'TodayVisit',
   components: {
     ISymbol,
-    DoctorCard
+    DoctorCard,
+    VisitedCard,
+    DoctortList
   }
 };
 </script>
 
 <script setup lang="ts">
 import { Search } from '@element-plus/icons-vue';
-import { ref } from 'vue';
+import { onMounted, ref } from 'vue';
 import { useRouter } from 'vue-router';
+import workbenchApi from '@/service/api/workbench';
+import { IHaveVist, IVisit } from './types/doctor-card';
 
 const router = useRouter();
 
@@ -83,6 +101,27 @@ const changeTag = (val: string) => {
 };
 
 let doctor = ref<string>('');
+
+let visitList = ref<IVisit[]>([]);
+
+const getVisitList = () => {
+  workbenchApi.getVisitList().then((res) => {
+    visitList.value = res.data;
+  });
+};
+
+let haveVisitList = ref<IHaveVist[]>([]);
+
+const getHaveVisitList = () => {
+  workbenchApi.getHaveVisitList().then((res) => {
+    haveVisitList.value = res.data;
+  });
+};
+
+onMounted(() => {
+  getVisitList();
+  getHaveVisitList();
+});
 </script>
 
 <style lang="scss" scoped></style>

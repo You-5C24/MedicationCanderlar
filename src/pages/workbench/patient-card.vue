@@ -1,5 +1,8 @@
 <template>
-  <div class="p-24 bg-ffffff rounded-1 shadow w-192 cursor-pointer">
+  <div
+    class="p-24 bg-ffffff rounded-1 shadow w-192 cursor-pointer"
+    @click="getPatientDetail"
+  >
     <div class="flex items-center">
       <div
         class="w-36 h-36 border-3 rounded-full flex items-center justify-center font-semibold color-324280"
@@ -9,6 +12,7 @@
       </div>
       <div
         class="ml-auto border-1 border-color-708ED7 border text-12 color-708ED7 rounded-1 px-4 py-6"
+        @click.stop
       >
         看诊
       </div>
@@ -45,6 +49,7 @@
 <script lang="ts">
 import ISymbol from '@/components/ISymbol.vue';
 import { PropType } from 'vue';
+import { useRouter } from 'vue-router';
 import { IPatientInfo } from './types/workbench';
 
 export default {
@@ -62,6 +67,12 @@ const props = defineProps({
     default: () => ({})
   }
 });
+
+const router = useRouter();
+
+const getPatientDetail = () => {
+  router.push('/patientRecords');
+};
 </script>
 
 <style lang="scss" scoped></style>
