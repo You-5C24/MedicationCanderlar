@@ -12,7 +12,7 @@ export const rules = [
   [/^-bottom-(\d+)$/, ([, d]) => ({ bottom: `-${d}px` })],
   [/^-left-(\d+)$/, ([, d]) => ({ left: `-${d}px` })],
   [/^-right-(\d+)$/, ([, d]) => ({ right: `-${d}px` })],
-  [/^m-(\d+)$/, ([, d]) => ({ margin: `-${d}px` })],
+  [/^m-(\d+)$/, ([, d]) => ({ margin: `${d}px` })],
   [
     /^mx-(\d+)$/,
     ([, d]) => ({ 'margin-left': `${d}px`, 'margin-right': `${d}px` })

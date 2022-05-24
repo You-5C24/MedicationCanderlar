@@ -43,7 +43,7 @@
         <img class="w-48 h-48" :src="Default" />
       </div>
     </div>
-    <div class="flex-1 flex">
+    <div class="flex-1 flex overflow-auto">
       <router-view></router-view>
     </div>
   </section>

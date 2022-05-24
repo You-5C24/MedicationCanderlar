@@ -110,6 +110,7 @@
         v-for="item in records.detectionIndex"
         :key="item.id"
         class="mt-16 p-12 bg-ffffff flex items-center cursor-pointer rounded-2"
+        @click="getDetectionindex(item.id)"
       >
         <div class="flex flex-col">
           <span class="text-14">{{ item.year }}</span>
@@ -120,6 +121,7 @@
           iconClass="icon-wenjian"
           iconHeight="24"
           iconWidth="24"
+          @handleClick="getDetectionindex(item.id)"
         />
       </div>
     </div>
@@ -150,6 +152,10 @@ const getPatientRecords = (id: number) => {
 
 const getDetails = (id: number) => {
   router.push(`/patientRecords/details?id=${id}`);
+};
+
+const getDetectionindex = (id: number) => {
+  router.push(`/patientRecords/detectionIndex?id=${id}`);
 };
 
 onMounted(() => {

@@ -6,6 +6,7 @@ interface IWokbenchApi {
   getHaveVisitList: () => Promise<any>;
   getPatientBaseInfo: (params: { id: number }) => Promise<any>;
   getPatientRecords: (params: { id: number }) => Promise<any>;
+  getRecordDetails: (params: { id: number }) => Promise<any>;
 }
 
 export type { IWokbenchApi };

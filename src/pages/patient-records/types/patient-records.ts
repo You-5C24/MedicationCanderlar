@@ -41,4 +41,39 @@ interface IPatientRecords {
   medicalRecord: IMedicalRecord[];
 }
 
-export type { IBaseInfo, IPatientRecords };
+interface IRecordDetails {
+  time: string;
+  describe: string;
+  caseHistory: {
+    adr: string;
+    allergic: string;
+    family: string;
+    past: string;
+    surgery: string;
+    lastUpdate: string;
+  };
+  doctors: { id: number; name: string }[];
+  diagnose: {
+    info: string;
+    lastUpdate: string;
+  };
+  mainSuit: {
+    info: string;
+    lastUpdate: string;
+  };
+  medication: {
+    currentMedication: string;
+    lastUpdate: string;
+    suggest: string;
+  };
+  problem: {
+    info: string;
+    lastUpdate: string;
+  };
+  summary: {
+    info: string;
+    lastUpdate: string;
+  };
+}
+
+export type { IBaseInfo, IPatientRecords, IRecordDetails };

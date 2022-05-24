@@ -26,6 +26,9 @@ const workbenchApi: IWokbenchApi = {
   },
   getPatientRecords(params: { id: number }) {
     return http.get(`${base}/getPatientRecords`, params);
+  },
+  getRecordDetails(params: { id: number }) {
+    return http.get(`${base}/getRecordDetails`, params);
   }
 };
 
