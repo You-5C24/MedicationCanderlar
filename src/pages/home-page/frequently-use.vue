@@ -4,7 +4,11 @@
     <span class="text-18 font-semibold color-35405a">我的常用</span>
     <!-- Frequently use items -->
     <div class="mt-48 flex flex-wrap">
-      <div v-for="frequentlyUse in frequentlyUses" :key="frequentlyUse.label">
+      <div
+        v-for="frequentlyUse in frequentlyUses"
+        :key="frequentlyUse.label"
+        class="mr-24 last--m-0"
+      >
         <UseModule :item="frequentlyUse" />
       </div>
     </div>

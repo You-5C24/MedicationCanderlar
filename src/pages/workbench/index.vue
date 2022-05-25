@@ -2,7 +2,7 @@
   <section>
     <div class="flex mt-40">
       <!-- Use Items -->
-      <div v-for="item in useItems" :key="item.label">
+      <div v-for="item in useItems" :key="item.label" class="mr-24">
         <UseModule :item="item" />
       </div>
     </div>

@@ -1,6 +1,6 @@
 <template>
   <div
-    class="w-144 h-48 rounded-1 bg-ffffff flex flex-col items-center py-8 mr-24 last--m-0 relative cursor-pointer shadow"
+    class="w-144 h-48 rounded-1 bg-ffffff flex flex-col items-center py-8 relative cursor-pointer shadow"
     @click="toPosition()"
   >
     <img class="absolute w-48 h-48 -top-22" :src="item.icon" />
