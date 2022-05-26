@@ -1,5 +1,5 @@
 <template>
-  <section class="flex-c">
+  <section class="flex-c overflow-auto">
     <div>
       <span class="text-18 font-semibold color-35405a">统计数据看板</span>
     </div>
@@ -18,8 +18,12 @@
     </div>
     <!-- 患者年龄分布 患者性别比例 -->
     <div class="mt-24 grid grid-cols-2 h-280" style="grid-gap: 24px">
-      <div class="bg-ffffff rounded-2 p-24"></div>
-      <div class="bg-ffffff rounded-2 p-24"></div>
+      <div class="bg-ffffff rounded-2 p-24 flex">
+        <AgeDistribution />
+      </div>
+      <div class="bg-ffffff rounded-2 p-24 flex">
+        <GenderPercentage />
+      </div>
     </div>
   </section>
 </template>
@@ -28,12 +32,17 @@
 import InfoCard from './info-card.vue';
 import SectionPressure from './section-pressure.vue';
 import SeeingChart from './seeing-chart.vue';
+import AgeDistribution from './age-distribution.vue';
+import GenderPercentage from './gender-percentage.vue';
+
 export default {
   name: 'StatisticalForm',
   components: {
     InfoCard,
     SectionPressure,
-    SeeingChart
+    SeeingChart,
+    AgeDistribution,
+    GenderPercentage
   }
 };
 </script>

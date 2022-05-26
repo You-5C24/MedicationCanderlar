@@ -114,13 +114,21 @@ const getChartInit = () => {
 onMounted(() => {
   getChartInit();
 
-  window.onresize = debounce(() => {
-    charEch.resize();
-  }, 300);
+  window.addEventListener(
+    'resize',
+    debounce(() => {
+      charEch.resize();
+    }, 100)
+  );
 });
 
 onBeforeUnmount(() => {
-  window.onresize = null;
+  window.removeEventListener(
+    'resize',
+    debounce(() => {
+      charEch.resize();
+    }, 100)
+  );
 });
 </script>
 

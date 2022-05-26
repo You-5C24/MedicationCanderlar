@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section class="overflow-auto">
     <FrequentlyUse />
     <TodayCase class="mt-48" />
   </section>
