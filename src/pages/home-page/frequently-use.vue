@@ -38,26 +38,26 @@ const frequentlyUses: IFrequentlyUse[] = [
   {
     label: '用药诊疗',
     icon: Medicate,
-    router: '',
-    sideBarKey: ''
+    router: '/medicalDiagnosis',
+    sideBarKey: 'Workbench'
   },
   {
     label: '患者列表',
     icon: Patient,
-    router: '',
-    sideBarKey: ''
+    router: '/workbench',
+    sideBarKey: 'Workbench'
   },
   {
     label: '今日出诊',
     icon: Doctor,
-    router: '',
-    sideBarKey: ''
+    router: '/todayVisit',
+    sideBarKey: 'Workbench'
   },
   {
     label: '会诊室',
     icon: Office,
-    router: '',
-    sideBarKey: ''
+    router: '/conferenceRoom',
+    sideBarKey: 'Workbench'
   },
   {
     label: '角色管理',
@@ -69,7 +69,7 @@ const frequentlyUses: IFrequentlyUse[] = [
     label: '系统管理',
     icon: Setting,
     router: '/systemManagement',
-    sideBarKey: 'systemManagement'
+    sideBarKey: 'SystemManagement'
   }
 ];
 </script>

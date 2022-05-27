@@ -86,7 +86,7 @@ const useItems = [
   {
     label: '今日出诊',
     icon: Doctor,
-    router: '/TodayVisit',
+    router: '/todayVisit',
     sideBarKey: 'Workbench'
   }
 ];
