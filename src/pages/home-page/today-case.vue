@@ -72,6 +72,7 @@ export default {
 import { randomNum } from '@/util';
 import dayjs from 'dayjs';
 import { onMounted, ref } from 'vue';
+import { IData, ISchedule } from './types/today-case';
 
 const dates = [
   {
@@ -122,24 +123,6 @@ const times = [
   '4PM',
   '5PM'
 ];
-
-interface ISchedule {
-  startTime: string;
-  endTime: string;
-  patientName: string;
-  message: string;
-  left?: number;
-  top?: number;
-  height?: number;
-  borderColor?: string;
-  background?: string;
-  timeColor?: string;
-}
-
-interface IData {
-  time: string;
-  scheduling: ISchedule[];
-}
 
 const datas = ref<IData[]>([
   {
@@ -224,7 +207,6 @@ const getCardPosition = (item: IData, index: number) => {
     const left = index * 280 + 12;
     const top = calInitMinutes * 8 + 70;
     const height = calUseMinutes * 7;
-    console.log(calInitMinutes, calUseMinutes, left, top, height);
 
     schedule.left = left;
     schedule.top = top;
